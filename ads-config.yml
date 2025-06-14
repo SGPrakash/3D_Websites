@@ -1,0 +1,63 @@
+ads:
+  - id: 1
+    title: "🚀 Limited Time Offer!"
+    subtitle: "Get 30% OFF on CCTV Installation"
+    description: "Professional CCTV installation with FREE maintenance for 1 year. Secure your business with our advanced surveillance systems."
+    cta_text: "Call Now: 8742326660"
+    cta_action: "tel:8742326660"
+    background_color: "#1e3a8a"
+    image: "assets/cctv-banner.jpg"
+    features:
+      - "HD 4K Resolution Cameras"
+      - "24/7 Remote Monitoring"
+      - "Mobile App Access"
+      - "1 Year Free Maintenance"
+    
+  - id: 2
+    title: "💡 Smart LED Solutions"
+    subtitle: "Transform Your Space"
+    description: "Energy-efficient LED lighting systems that reduce electricity bills by up to 70%. Smart controls and automation included."
+    cta_text: "Starting from ₹5,000"
+    cta_action: "#services"
+    background_color: "#059669"
+    image: "assets/spelltech.png"
+    features:
+      - "70% Energy Savings"
+      - "Smart Controls"
+      - "Long Lasting LEDs"
+      - "Professional Installation"
+    
+  - id: 3
+    title: "🔧 24/7 Tech Support"
+    subtitle: "Always Here to Help"
+    description: "Round-the-clock technical support and maintenance services. Our expert team is always ready to assist you."
+    cta_text: "Get Support Now"
+    cta_action: "#contact"
+    background_color: "#7c3aed"
+    image: "assets/spelltech.png"
+    features:
+      - "24/7 Availability"
+      - "Expert Technicians"
+      - "Remote Assistance"
+      - "Quick Response Time"
+    
+  - id: 4
+    title: "🌐 Complete Networking"
+    subtitle: "Secure & Fast Networks"
+    description: "Professional network setup for businesses. Secure, fast, and reliable networking solutions with enterprise-grade equipment."
+    cta_text: "Free Consultation"
+    cta_action: "#contact"
+    background_color: "#dc2626"
+    image: "assets/cctv-banner.jpg"
+    features:
+      - "Enterprise Grade Equipment"
+      - "Secure Connections"
+      - "High Speed Performance"
+      - "Professional Setup"
+
+settings:
+  auto_scroll_interval: 5000  # milliseconds
+  transition_duration: 800    # milliseconds
+  pause_on_hover: true
+  show_indicators: true
+  show_progress_bar: true

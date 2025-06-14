@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpellTech - Magical Partner in Technology Solutions</title>
+    <link rel="icon" type="image/png" href="assets/spelltech.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script async src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"></script>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.157.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.157.0/examples/jsm/"
+        }
+    }
+    </script>
+    <script type="module" src="main.js"></script>
+</head>
+<body>
+    <canvas id="bg"></canvas>
+
+    <button id="settings-toggle" class="settings-toggle">
+        <i class="fas fa-cog"></i>
+    </button>
+
+    <div class="control-panel hidden">
+        <div class="control-header">
+            <h3>Settings</h3>
+            <button class="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="control-section">
+            <h3>Theme</h3>
+            <div class="theme-buttons">
+                <button class="control-btn theme-btn active" data-theme="cyber">
+                    <i class="fas fa-microchip"></i>
+                    <span>Cyber</span>
+                </button>
+                <button class="control-btn theme-btn" data-theme="galaxy">
+                    <i class="fas fa-galaxy"></i>
+                    <span>Galaxy</span>
+                </button>
+                <button class="control-btn theme-btn" data-theme="matrix">
+                    <i class="fas fa-terminal"></i>
+                    <span>Matrix</span>
+                </button>
+            </div>
+        </div>
+        
+        <div class="control-section">
+            <h3>Center Shape</h3>
+            <div class="shape-buttons">
+                <button class="control-btn shape-btn active" data-shape="sphere">
+                    <i class="fas fa-circle"></i>
+                    <span>Sphere</span>
+                </button>
+                <button class="control-btn shape-btn" data-shape="cube">
+                    <i class="fas fa-square"></i>
+                    <span>Cube</span>
+                </button>
+                <button class="control-btn shape-btn" data-shape="triangle">
+                    <i class="fas fa-play"></i>
+                    <span>Triangle</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="control-section">
+            <h3>Color</h3>
+            <div class="color-buttons">
+                <button class="color-btn active" data-color="teal" style="--color: #64ffda"></button>
+                <button class="color-btn" data-color="purple" style="--color: #bd93f9"></button>
+                <button class="color-btn" data-color="orange" style="--color: #ffb86c"></button>
+                <button class="color-btn" data-color="pink" style="--color: #ff79c6"></button>
+                <button class="color-btn" data-color="blue" style="--color: #8be9fd"></button>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <header>
+            <div class="company-container">
+                <div class="company-logo">
+                    <img src="assets/spelltech.png" alt="SpellTech Logo" class="logo-image">
+                </div>
+                <div class="company-info">
+                    <h1>SPELL TECH</h1>
+                    <p class="tagline">Magical Partner in Technology Solutions</p>
+                    <div class="contact-quick">
+                        <span><i class="fas fa-phone"></i> 8742326660</span>
+                        <span><i class="fas fa-envelope"></i> spelltech1@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="services" id="services">
+            <h2>Our Services</h2>
+            <div class="service-container">
+                <div class="service-card" data-tilt>
+                    <i class="fas fa-video"></i>
+                    <h3>CCTV & Security Systems</h3>
+                    <ul>
+                        <li>IP Camera Installation</li>
+                        <li>DVR/NVR Setup</li>
+                        <li>Remote Monitoring</li>
+                        <li>Access Control Systems</li>
+                        <li>Security Consultation</li>
+                    </ul>
+                    <div class="service-price">Starting from ₹15,000</div>
+                </div>
+                <div class="service-card" data-tilt>
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Networking Solutions</h3>
+                    <ul>
+                        <li>LAN/WAN Setup</li>
+                        <li>WiFi Installation</li>
+                        <li>Network Security</li>
+                        <li>Server Configuration</li>
+                        <li>Network Maintenance</li>
+                    </ul>
+                    <div class="service-price">Starting from ₹8,000</div>
+                </div>
+                <div class="service-card" data-tilt>
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>LED Lighting Solutions</h3>
+                    <ul>
+                        <li>LED Panel Installation</li>
+                        <li>Smart Lighting Systems</li>
+                        <li>Energy Efficient Solutions</li>
+                        <li>Outdoor LED Displays</li>
+                        <li>Lighting Automation</li>
+                    </ul>
+                    <div class="service-price">Starting from ₹5,000</div>
+                </div>
+                <div class="service-card" data-tilt>
+                    <i class="fas fa-code"></i>
+                    <h3>Software Solutions</h3>
+                    <ul>
+                        <li>Custom Software Development</li>
+                        <li>Web Applications</li>
+                        <li>Mobile Apps</li>
+                        <li>Database Management</li>
+                        <li>Software Integration</li>
+                    </ul>
+                    <div class="service-price">Starting from ₹25,000</div>
+                </div>
+                <div class="service-card" data-tilt>
+                    <i class="fas fa-tools"></i>
+                    <h3>Tech Support & Services</h3>
+                    <ul>
+                        <li>Computer Repair</li>
+                        <li>System Maintenance</li>
+                        <li>Data Recovery</li>
+                        <li>Hardware Upgrades</li>
+                        <li>24/7 Technical Support</li>
+                    </ul>
+                    <div class="service-price">Starting from ₹1,500</div>
+                </div>
+                <div class="service-card" data-tilt>
+                    <i class="fas fa-laptop"></i>
+                    <h3>IT Consultation</h3>
+                    <ul>
+                        <li>Technology Planning</li>
+                        <li>System Architecture</li>
+                        <li>Digital Transformation</li>
+                        <li>IT Strategy</li>
+                        <li>Project Management</li>
+                    </ul>
+                    <div class="service-price">Starting from ₹10,000</div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="hero">
+            <div class="ad-banner" id="enhanced-ad-banner">
+                <div class="ad-progress-bar">
+                    <div class="ad-progress-fill"></div>
+                </div>
+                <div class="ad-content" id="ad-content">
+                    <!-- Ad slides will be dynamically generated from YAML config -->
+                </div>
+                <div class="ad-indicators" id="ad-indicators">
+                    <!-- Indicators will be dynamically generated -->
+                </div>
+                <div class="ad-controls">
+                    <button class="ad-control prev" id="ad-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="ad-control next" id="ad-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-choose-us">
+            <h2>Why Choose SpellTech?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-award"></i>
+                    <h3>Expert Team</h3>
+                    <p>Certified professionals with years of experience in technology solutions</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock technical support and maintenance services</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Quality Assurance</h3>
+                    <p>Premium quality products with comprehensive warranty coverage</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-rupee-sign"></i>
+                    <h3>Competitive Pricing</h3>
+                    <p>Best prices in the market with flexible payment options</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"SpellTech provided excellent CCTV installation for our office. Professional service and great support!"</p>
+                    <div class="client-info">
+                        <strong>Rajesh Kumar</strong>
+                        <span>Business Owner</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Their networking solutions transformed our business operations. Highly recommended!"</p>
+                    <div class="client-info">
+                        <strong>Priya Sharma</strong>
+                        <span>IT Manager</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Amazing software development team. They delivered exactly what we needed on time."</p>
+                    <div class="client-info">
+                        <strong>Amit Patel</strong>
+                        <span>Startup Founder</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2>CCTV Price Estimator</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>8742326660</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>spelltech1@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Tech Street</p>
+                            <p>Bangalore, Karnataka 560001</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>Mon - Sat: 9:00 AM - 7:00 PM</p>
+                            <p>Sun: 10:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cctv-estimator">
+                    <h3>Get Your CCTV Installation Quote</h3>
+                    <form id="cctv-estimator-form">
+                        <div class="form-group">
+                            <label>Property Type</label>
+                            <select id="property-type" required>
+                                <option value="">Select Property Type</option>
+                                <option value="home">Home/Residential</option>
+                                <option value="office">Office/Commercial</option>
+                                <option value="warehouse">Warehouse/Industrial</option>
+                                <option value="retail">Retail Store</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Number of Cameras</label>
+                            <select id="camera-count" required>
+                                <option value="">Select Camera Count</option>
+                                <option value="2">2 Cameras</option>
+                                <option value="4">4 Cameras</option>
+                                <option value="8">8 Cameras</option>
+                                <option value="16">16 Cameras</option>
+                                <option value="custom">Custom (More than 16)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Camera Quality</label>
+                            <select id="camera-quality" required>
+                                <option value="">Select Camera Quality</option>
+                                <option value="hd">HD (720p)</option>
+                                <option value="fhd">Full HD (1080p)</option>
+                                <option value="4k">4K Ultra HD</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Recording Storage</label>
+                            <select id="storage" required>
+                                <option value="">Select Storage</option>
+                                <option value="1tb">1TB HDD</option>
+                                <option value="2tb">2TB HDD</option>
+                                <option value="4tb">4TB HDD</option>
+                                <option value="8tb">8TB HDD</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Additional Features</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" id="night-vision" value="night-vision">
+                                    <span>Night Vision</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" id="mobile-app" value="mobile-app">
+                                    <span>Mobile App Access</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" id="motion-detection" value="motion-detection">
+                                    <span>Motion Detection</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" id="remote-monitoring" value="remote-monitoring">
+                                    <span>24/7 Remote Monitoring</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Installation Area (sq ft)</label>
+                            <input type="number" id="area" placeholder="Enter area in square feet" min="100" max="50000">
+                        </div>
+                        
+                        <button type="submit" class="estimate-btn">Calculate Estimate</button>
+                    </form>
+                    
+                    <div id="price-estimate" class="price-estimate hidden">
+                        <h3>Your CCTV Installation Estimate</h3>
+                        <div class="estimate-breakdown">
+                            <div class="estimate-item">
+                                <span>Equipment Cost:</span>
+                                <span id="equipment-cost">₹0</span>
+                            </div>
+                            <div class="estimate-item">
+                                <span>Installation Cost:</span>
+                                <span id="installation-cost">₹0</span>
+                            </div>
+                            <div class="estimate-item">
+                                <span>Additional Features:</span>
+                                <span id="features-cost">₹0</span>
+                            </div>
+                            <div class="estimate-item total">
+                                <span>Total Estimate:</span>
+                                <span id="total-cost">₹0</span>
+                            </div>
+                        </div>
+                        <div class="estimate-note">
+                            <p><strong>Note:</strong> This is an approximate estimate. Final pricing may vary based on site inspection and specific requirements.</p>
+                            <p><strong>Includes:</strong> 1 Year Warranty, Free Installation, Basic Configuration</p>
+                        </div>
+                        <div class="estimate-actions">
+                            <button class="contact-btn" onclick="window.location.href='tel:8742326660'">
+                                <i class="fas fa-phone"></i> Call for Quote
+                            </button>
+                            <button class="whatsapp-btn" onclick="window.open('https://wa.me/918742326660?text=Hi, I need a CCTV installation quote', '_blank')">
+                                <i class="fab fa-whatsapp"></i> WhatsApp Quote
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> 8742326660</p>
+                    <p><i class="fas fa-envelope"></i> spelltech1@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SpellTech. All rights reserved. | Magical Partner in Technology Solutions</p>
+            </div>
+        </footer
+    </main>
+</body>
+</html>
