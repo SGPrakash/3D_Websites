@@ -523,8 +523,8 @@ class EnhancedAdBanner {
             // Create slide
             const slide = document.createElement('div');
             slide.className = `ad-slide ${index === 0 ? 'active' : ''}`;
-            slide.style.backgroundImage = `url(${ad.image})`;
-            slide.style.backgroundColor = ad.background_color;
+            // Only set background color, not background image
+            slide.style.backgroundColor = ad.background_color || '#000';
 
             slide.innerHTML = `
                 <div class="ad-text-content">
@@ -552,6 +552,7 @@ class EnhancedAdBanner {
 
         this.slides = document.querySelectorAll('.ad-slide');
         this.indicators = document.querySelectorAll('.indicator');
+        updateAdImageSizes(); // Ensure images are sized correctly after slide generation
     }
 
     setupEventListeners() {
@@ -727,6 +728,27 @@ class EnhancedAdBanner {
         this.startAutoScroll();
     }
 }
+
+// Responsive ad banner image sizing
+function updateAdImageSizes() {
+    document.querySelectorAll('.ad-image').forEach(img => {
+        if (window.innerWidth < 500) {
+            img.style.height = '100px';
+            img.style.width = '100%';
+        } else if (window.innerWidth < 800) {
+            img.style.height = '180px';
+            img.style.width = '90%';
+        } else {
+            img.style.height = '80%';
+            img.style.width = '90%';
+        }
+    });
+}
+
+// Call on load and resize/orientation change
+window.addEventListener('resize', updateAdImageSizes);
+window.addEventListener('orientationchange', updateAdImageSizes);
+document.addEventListener('DOMContentLoaded', updateAdImageSizes);
 
 // Initialize Enhanced Ad Banner
 document.addEventListener('DOMContentLoaded', function() {
