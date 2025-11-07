@@ -52,8 +52,8 @@ Pricing can be adjusted in `main.js` in the `calculateCCTVPrice()` function.
 
 ## Contact
 
-- Phone: 8742326660
-- Email: spelltech1@gmail.com
+- Phone: 8888888888
+- Email: spelltech@gmail.com
 - Location: Bangalore, Karnataka
 
 ## License
